@@ -1,6 +1,7 @@
 import { ChatAppResponse, ChatAppResponseOrError, ChatAppRequest, Config } from "./models";
 import { BACKEND_URI } from "./BACKEND_URI";
-const API_ENDPOINT = "https://devguide-api.redgrass-787fbee0.australiaeast.azurecontainerapps.io";
+//const API_ENDPOINT = "https://devguide-api.redgrass-787fbee0.australiaeast.azurecontainerapps.io";
+const REACT_API_ENDPOINT = process.env.API_ENDPOINT
 
 function getHeaders(): Record<string, string> {
     var headers: Record<string, string> = {
@@ -11,7 +12,7 @@ function getHeaders(): Record<string, string> {
 
 export async function chatApi(request: ChatAppRequest): Promise<Response> {
     const body = JSON.stringify(request);
-    return await fetch(`${API_ENDPOINT}/ai`, {
+    return await fetch(`${REACT_API_ENDPOINT}/ai`, {
         method: "POST",
         mode: "cors",
         headers: getHeaders(),
