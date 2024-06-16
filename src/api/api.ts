@@ -1,6 +1,6 @@
 import { ChatAppResponse, ChatAppResponseOrError, ChatAppRequest, Config } from "./models";
 import { BACKEND_URI } from "./BACKEND_URI";
-const API_ENDPOINT = process.env.API_ENDPOINT;
+const API_ENDPOINT = "https://devguide-api.redgrass-787fbee0.australiaeast.azurecontainerapps.io";
 
 function getHeaders(): Record<string, string> {
     var headers: Record<string, string> = {
